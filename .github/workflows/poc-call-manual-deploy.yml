@@ -1,4 +1,4 @@
-﻿name: 'PoC-2: cross-org call of ultimateai/workflows manual-deploy (secret-heavy)'
+﻿name: 'PoC-2: cross-org call of ultimateai/workflows manual-deploy (no secrets inherit)'
 on:
   workflow_dispatch:
 jobs:
@@ -17,4 +17,3 @@ jobs:
       e2e_bucket_name: bug-bounty-poc-bucket
       region: europe
       runner: ubuntu-latest
-    secrets: inherit
