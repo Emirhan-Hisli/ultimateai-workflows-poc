@@ -1,0 +1,13 @@
+﻿name: 'PoC-3: cross-org call of ultimateai/workflows ts_open-pr'
+on:
+  workflow_dispatch:
+jobs:
+  call:
+    uses: ultimateai/workflows/.github/workflows/ts_open-pr.yml@0.34.0
+    with:
+      runner: ubuntu-latest
+      test_command: 'echo ZENDESK_BB_POC_EXECUTED && exit 0'
+      build_command: ''
+      lint_command: ''
+      npm_install_command: 'npm --version'
+      node_version: '20.x'
