@@ -1,0 +1,20 @@
+﻿name: 'PoC-2: cross-org call of ultimateai/workflows manual-deploy (secret-heavy)'
+on:
+  workflow_dispatch:
+jobs:
+  call:
+    uses: ultimateai/workflows/.github/workflows/manual-deploy.yml@0.34.0
+    with:
+      image_repo: eu.gcr.io/bug-bounty-poc-repo
+      app_squad: poc
+      environment: development
+      github_email: emirhan.hisli4554@gmail.com
+      github_user: Emirhan-Hisli
+      k8s_manifests_repo: Emirhan-Hisli/ultimateai-workflows-poc
+      run_e2e_tests: 'false'
+      e2e_repo: Emirhan-Hisli/ultimateai-workflows-poc
+      e2e_projects: '["poc-canary"]'
+      e2e_bucket_name: bug-bounty-poc-bucket
+      region: europe
+      runner: ubuntu-latest
+    secrets: inherit

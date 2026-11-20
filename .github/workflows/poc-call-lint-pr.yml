@@ -1,0 +1,13 @@
+﻿name: 'PoC-1: cross-org call of ultimateai/workflows lint-pr (runner resolved by caller)'
+on:
+  workflow_dispatch:
+jobs:
+  call:
+    uses: ultimateai/workflows/.github/workflows/lint-pr.yml@0.34.0
+    with:
+      runner: ubuntu-latest
+      requireScope: false
+      allowed_types: |-
+        poc
+        fix
+        feat
